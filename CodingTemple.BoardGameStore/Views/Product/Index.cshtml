@@ -1,0 +1,27 @@
+﻿@model CodingTemple.BoardGameStore.Models.ProductModel
+@{
+    ViewBag.Title = @Model.Name;
+}
+<div class="row">
+    <div class="col-xs-4">
+        @foreach (var img in Model.Images)
+        {
+            <img src="@img" style="max-width:100%" />
+        }
+    </div>
+    <div class="col-xs-8">
+        <div class="well">
+            <h2>@Model.Name</h2>
+            <p>@((Model.Price ?? 0).ToString("C"))</p>
+            @using (Html.BeginForm())
+            {
+                @Html.HiddenFor(x => x.ID)
+                @Html.HiddenFor(x => x.Price)
+                @Html.HiddenFor(x => x.Name)
+                @Html.HiddenFor(x => x.Rating)
+                @Html.HiddenFor(x => x.Description)
+                <input type="submit" class="btn btn-default" value="Add to Cart"/>
+            }
+        </div>
+    </div>
+</div>

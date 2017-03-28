@@ -1,0 +1,14 @@
+{
+  "version": "1.0.0",
+  "name": "asp.net",
+  "private": true,
+  "devDependencies": {
+  },
+  
+  "Data": {
+    "DefaultConnection": {
+      "ConnectionString": "\"Server=.;Database=Security;Trusted_Connection=True;\""
+    }
+  }
+}
+

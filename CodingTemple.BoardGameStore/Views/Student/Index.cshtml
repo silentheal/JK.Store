@@ -4,6 +4,13 @@
 }
 
 <h2>Index</h2>
+@if (ViewBag.Edited)
+{
+    <div class="alert alert-success">
+        <p>Record edited successfully</p>
+    </div>
+}
+
 <table class="table table-striped">
     @foreach (var student in Model)
     {
@@ -12,6 +19,7 @@
             <td>@student.FirstName</td>
             <td>@student.LastName</td>
             <td>@student.FavoriteFood</td>
+            <td><a href="/student/edit/@student.ID" class="btn btn-default">Edit</a></td>
         </tr>
     }
 </table>

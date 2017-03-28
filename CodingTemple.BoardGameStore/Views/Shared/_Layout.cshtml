@@ -23,7 +23,11 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("A Product", "Index", "Product", new { id = 1 }, null)</li>
+                    <li>@Html.ActionLink("Register", "Register", "Account")</li>
                 </ul>
+
+                @Html.Partial("_Cart")
             </div>
         </div>
     </div>
@@ -37,6 +41,7 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/angular")
     @RenderSection("scripts", required: false)
 </body>
 </html>

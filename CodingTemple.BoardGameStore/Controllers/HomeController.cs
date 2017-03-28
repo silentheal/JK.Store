@@ -13,13 +13,15 @@ namespace CodingTemple.BoardGameStore.Controllers
             return View();
         }
 
+        [HandleError(View="Error")]
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
-
+            throw new Exception("This page is broken");
             return View();
         }
 
+        [OutputCache(Duration = 3)]
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
